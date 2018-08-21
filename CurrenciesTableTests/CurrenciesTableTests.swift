@@ -11,26 +11,12 @@ import XCTest
 
 class CurrenciesTableTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testConverter() {
+        let ratesTable = ExchangeRatesTable(base: "USD", date: "does'n matter", rates: ["RUB":67.24, "EUR":0.8764, "GBP":0.78418])
+        let list = Converter.currencyListFor(amount: 10.0, ratesTable: ratesTable)
+        XCTAssert(list.count > 0, "converter returned incorrect number of items")
+        XCTAssertEqual(list[0].currencyAmount, 0.8764 * 10.0, accuracy: 0.01)
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+   
 }

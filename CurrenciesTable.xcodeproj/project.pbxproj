@@ -18,6 +18,9 @@
 		652AD00E212AB33C00079651 /* ExchangeRatesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652AD00D212AB33C00079651 /* ExchangeRatesTable.swift */; };
 		652AD012212AB42500079651 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652AD011212AB42500079651 /* ViewModelProtocol.swift */; };
 		652AD014212AB43A00079651 /* CurrenciesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652AD013212AB43A00079651 /* CurrenciesViewModel.swift */; };
+		65EED8CD212ABAE60073B931 /* CurrencyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EED8CC212ABAE60073B931 /* CurrencyItem.swift */; };
+		65EED8CF212AC3110073B931 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EED8CE212AC3110073B931 /* Converter.swift */; };
+		65EED8D1212AD28E0073B931 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EED8D0212AD28E0073B931 /* CurrencyCell.swift */; };
 		66DD628CEE8A645C140FBFCD /* Pods_CurrenciesTableTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D022259DBBA72C2C3C57F0 /* Pods_CurrenciesTableTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		652AD00D212AB33C00079651 /* ExchangeRatesTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRatesTable.swift; sourceTree = "<group>"; };
 		652AD011212AB42500079651 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		652AD013212AB43A00079651 /* CurrenciesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesViewModel.swift; sourceTree = "<group>"; };
+		65EED8CC212ABAE60073B931 /* CurrencyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyItem.swift; sourceTree = "<group>"; };
+		65EED8CE212AC3110073B931 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		65EED8D0212AD28E0073B931 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		73D022259DBBA72C2C3C57F0 /* Pods_CurrenciesTableTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrenciesTableTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98AD89182FD28EC512F248CF /* Pods-CurrenciesTable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrenciesTable.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrenciesTable/Pods-CurrenciesTable.release.xcconfig"; sourceTree = "<group>"; };
 		9C550E1BE16B934DDABAE0E2 /* Pods-CurrenciesTableTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrenciesTableTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrenciesTableTests/Pods-CurrenciesTableTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +149,8 @@
 			children = (
 				652AD013212AB43A00079651 /* CurrenciesViewModel.swift */,
 				652ACFEC212AB29900079651 /* ViewController.swift */,
+				65EED8CC212ABAE60073B931 /* CurrencyItem.swift */,
+				65EED8D0212AD28E0073B931 /* CurrencyCell.swift */,
 			);
 			path = CurrenciesTable;
 			sourceTree = "<group>";
@@ -151,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				652AD011212AB42500079651 /* ViewModelProtocol.swift */,
+				65EED8CE212AC3110073B931 /* Converter.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -379,6 +388,9 @@
 				652AD012212AB42500079651 /* ViewModelProtocol.swift in Sources */,
 				652AD00E212AB33C00079651 /* ExchangeRatesTable.swift in Sources */,
 				652AD014212AB43A00079651 /* CurrenciesViewModel.swift in Sources */,
+				65EED8CD212ABAE60073B931 /* CurrencyItem.swift in Sources */,
+				65EED8CF212AC3110073B931 /* Converter.swift in Sources */,
+				65EED8D1212AD28E0073B931 /* CurrencyCell.swift in Sources */,
 				652ACFEB212AB29900079651 /* AppDelegate.swift in Sources */,
 				652AD00C212AB2FA00079651 /* ApiClient.swift in Sources */,
 			);

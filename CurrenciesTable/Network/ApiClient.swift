@@ -8,34 +8,17 @@
 
 import Foundation
 
-class ApiClient {
+protocol ExchangeRatesApi {
+    func getExchangeRates(base: String, completion: RatesCompletion?)
     
     typealias RatesCompletion = (_ exchangeTable: ExchangeRatesTable?,_ error: Error?) -> ()
+}
+
+
+class ApiClient {
     
     let session = URLSession.init(configuration: .default)
     let ratesUrl = URL(string: "https://revolut.duckdns.org/latest")!
-    
-    func getExchangeRates(base: String = "EUR", completion: RatesCompletion?) {
-        
-        let request = configurateRequest(url: ratesUrl, withParametrs: ["base" : base])
-        
-        let task = session.dataTask(with: request) { (data, response, error) in
-            guard let responseData = data, error == nil else {
-                print("\(String(describing: error?.localizedDescription))")
-                completion?(nil, error)
-                return
-            }
-            do {
-                let decoder = JSONDecoder()
-                let exchangeTable = try decoder.decode(ExchangeRatesTable.self, from: responseData)
-                completion?(exchangeTable, nil)
-            } catch let er {
-                completion?(nil, er)
-                return
-            }
-        }
-        task.resume()
-    }
     
     func configurateRequest(url: URL,
                             httpMethod: String = "GET",
@@ -64,3 +47,29 @@ class ApiClient {
         return urlRequest
     }
 }
+
+extension ApiClient: ExchangeRatesApi {
+    
+    func getExchangeRates(base: String = "EUR", completion: RatesCompletion?) {
+        
+        let request = configurateRequest(url: ratesUrl, withParametrs: ["base" : base])
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            guard let responseData = data, error == nil else {
+                print("\(String(describing: error?.localizedDescription))")
+                completion?(nil, error)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                let exchangeTable = try decoder.decode(ExchangeRatesTable.self, from: responseData)
+                completion?(exchangeTable, nil)
+            } catch let er {
+                completion?(nil, er)
+                return
+            }
+        }
+        task.resume()
+    }
+}
+
